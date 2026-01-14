@@ -1,0 +1,260 @@
+/* -----GLOBAL STYLES----- */
+body {
+  font-family: "Lora", serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 0 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Edu NSW ACT Cursive", cursive;
+  font-weight: 400;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* main {
+  display: flex;
+  flex: 1 0 auto;
+} */
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  place-items: center;
+  background: url(../images/winter-tree-bg-1920x1080.jpg) no-repeat;
+  background-size: cover;
+}
+
+/* -----TO-DO-LIST----- */
+
+.to-do-list-container {
+  margin-left: 15px;
+}
+
+.list-container {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#task {
+  width: 200px;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#add-button {
+  font-weight: bold;
+  cursor: pointer;
+  width: 80px;
+  border-radius: 5px;
+}
+
+.list-container li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid #ddd;
+  background: #f9f9f9;
+  border-radius: 10px;
+  width: 500px;
+  /* position: relative; */
+}
+
+.bi-circle,
+.bi-check-circle {
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* .bi-x-circle-fill {
+  position: absolute;
+  right: 5px;
+  top: 50%; 
+  transform: translateY(-50%);
+} */
+
+.list-container li .bi-x-circle-fill {
+  opacity: 0;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.list-container li:hover .bi-x-circle-fill {
+  opacity: 1;
+}
+
+/* -----CLOCK----- */
+.clock-container {
+  background-color: #000000;
+  /* opacity: 0.9; */
+  border: 10px solid #9a031e;
+  width: 400px;
+  height: 200px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock-container .clock {
+  position: relative;
+  top: 50px;
+  color: #9a031e;
+  font-size: 100px;
+  font-family: none;
+}
+
+.clock span {
+  font-size: 50px;
+}
+
+.clock-container .stop-watch {
+  position: relative;
+  top: -120px;
+  color: #9a031e;
+  font-size: 50px;
+  /* opacity: 0; */
+  font-family: none;
+}
+
+.btn-container {
+  position: relative;
+  top: -180px;
+}
+
+.btn-container button {
+  width: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* -----WEATHER----- */
+.weather-app-container {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.search {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  width: 200px;
+}
+
+.search input {
+  border-radius: 10px;
+  border-width: 2px;
+}
+
+button {
+  padding: 8px 12px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.weather-info {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+#temp-display {
+  cursor: pointer;
+}
+
+/* -----BUNNY----- */
+
+/* svg {
+  z-index: 1;
+} */
+
+/* default hidden */
+#very-hot-clothes,
+#hot-clothes,
+#warm-clothes,
+#mild-cool-clothes,
+#chilly-clothes,
+#cold-clothes,
+#very-cold-clothes,
+#freezing-clothes,
+#bunny-right-arm-wave,
+#bunny-blinking,
+#bunny-happy {
+  display: none;
+  /* cursor: pointer; */
+}
+
+svg {
+  cursor: pointer;
+}
+
+#freezing-shirt-wave,
+#freezing-gloves-wave,
+#very-cold-shirt-wave,
+#very-cold-gloves-wave,
+#cold-shirt-wave,
+#cold-gloves-wave,
+#chilly-shirt-wave,
+#mild-cool-shirt-wave,
+#warm-shirt-wave,
+#hot-shirt-wave {
+  opacity: 0;
+}
+
+/* visible helper class */
+.visible {
+  display: inline !important;
+}
+
+/* keep pointer behaviour */
+#bunny {
+  cursor: pointer;
+  pointer-events: bounding-box;
+  /* background: #ffffff; */
+  transition: all 1s ease;
+  /* transform: translateX(-100%); */
+}
+
+.bunny-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.message-box {
+  padding: 15px;
+  background: #f0f0f0;
+  border-left: 5px solid #3498db;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 250px;
+  margin-left: -80px;
+}
+
+/* #bunny:hover #bunny-right-arm {
+  display: none;
+}
+
+#bunny:hover #bunny-right-arm-wave {
+  display: inline;
+} */
