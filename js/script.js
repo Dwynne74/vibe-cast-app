@@ -98,6 +98,25 @@ resetBtn.addEventListener("click", resetClock);
 updateClock();
 const clockInterval = setInterval(updateClock, 1000);
 
+// -----DATE-----
+
+function updateDate() {
+  const today = new Date();
+  const dateInfo = document.querySelector("#date");
+
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
+  dateInfo.textContent = today.toLocaleDateString("en-US", options);
+}
+
+updateDate();
+setInterval(updateDate, 60000);
+
 // -----WEATHER-----
 const apiKey = "88a286aaba85e09a2aa76f29ac92e861";
 const searchBtn = document.querySelector("#searchBtn");

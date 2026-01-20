@@ -3,7 +3,7 @@ body {
   font-family: "Lora", serif;
   font-size: 1.5rem;
   line-height: 1.4;
-  margin: 0 0;
+  margin: 0;
 }
 
 h1,
@@ -258,3 +258,11 @@ svg {
 #bunny:hover #bunny-right-arm-wave {
   display: inline;
 } */
+
+footer {
+  background: rgb(37, 36, 36);
+  color: rgb(219, 232, 237);
+  display: flex;
+  padding: 0 10px;
+  font-size: 15px;
+}
