@@ -100,18 +100,76 @@ const clockInterval = setInterval(updateClock, 1000);
 
 // -----DATE-----
 
+// Convert Month
+function convertMonth(month) {
+  switch (month) {
+    case 0:
+      return "January";
+    case 1:
+      return "February";
+    case 2:
+      return "March";
+    case 3:
+      return "April";
+    case 4:
+      return "May";
+    case 5:
+      return "June";
+    case 6:
+      return "July";
+    case 7:
+      return "August";
+    case 8:
+      return "September";
+    case 9:
+      return "October";
+    case 10:
+      return "November";
+    case 11:
+      return "December";
+  }
+}
+
+// Convert day of the week
+function convertWeekDay(weekDay) {
+  switch (weekDay) {
+    case 0:
+      return "Sunday";
+    case 1:
+      return "Monday";
+    case 2:
+      return "Teusday";
+    case 3:
+      return "Wednesday";
+    case 4:
+      return "Thursday";
+    case 5:
+      return "Friday";
+    case 6:
+      return "Saturday";
+  }
+}
+
 function updateDate() {
   const today = new Date();
-  const dateInfo = document.querySelector("#date");
+  const month = document.querySelector(".month");
+  const weekDay = document.querySelector(".week-day");
+  const day = document.querySelector(".day");
 
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
+  //   const dateInfo = document.querySelector("#date");
 
-  dateInfo.textContent = today.toLocaleDateString("en-US", options);
+  //   const options = {
+  //     weekday: "long",
+  //     year: "numeric",
+  //     month: "long",
+  //     day: "numeric",
+  //   };
+
+  month.innerHTML = convertMonth(today.getMonth());
+  weekDay.innerHTML = convertWeekDay(today.getDay());
+  day.innerHTML = today.getDate();
+
+  //   dateInfo.textContent = today.toLocaleDateString("en-US", options);
 }
 
 updateDate();

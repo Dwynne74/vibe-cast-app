@@ -19,16 +19,27 @@
     <header></header>
     <main>
       <div class="content-wrapper">
-        <section class="to-do-list-section">
-          <h1>To do list</h1>
-          <div class="to-do-list-container">
-            <ul class="list-container" id="to-do-list"></ul>
-            <input type="text" name="task" id="task" placeholder="Enter Task" />
-            <button type="button" id="add-button">Add</button>
+        <!-- Weather block: #1 -->
+        <div class="weather-app-container">
+          <h1>🌤️ Weather App</h1>
+          <div class="search">
+            <input type="text" id="city" placeholder="Enter city name" />
+            <button id="searchBtn">Search</button>
           </div>
-        </section>
-        <section class="clock-section">
-          <!-- <h1>Clock/Stop-watch</h1> -->
+          <div class="weather-info" id="weatherInfo"></div>
+        </div>
+        <!-- Date block: #2 -->
+        <section class="date-and-clock-section">
+          <div class="date-container">
+            <div class="month-container">
+              <h2 class="month"></h2>
+            </div>
+            <div class="day-and-week-container">
+              <p class="day"></p>
+              <p class="week-day"></p>
+            </div>
+          </div>
+          <!-- Clock block: #2 -->
           <div class="clock-container">
             <p class="clock">00:00</p>
             <p class="stop-watch">00:00</p>
@@ -39,23 +50,8 @@
             </div>
           </div>
         </section>
-        <section class="date-section">
-          <div class="date-container">
-            <p id="date"></p>
-          </div>
-        </section>
-        <section class="weather-section">
-          <div class="weather-app-container">
-            <h1>🌤️ Weather App</h1>
-            <div class="search">
-              <input type="text" id="city" placeholder="Enter city name" />
-              <button id="searchBtn">Search</button>
-            </div>
-            <div class="weather-info" id="weatherInfo"></div>
-          </div>
-        </section>
+        <!-- Bunny block: #3 -->
         <section class="bunny-section">
-          <!-- <h1>Bunny</h1> -->
           <div class="bunny-container">
             <svg
               width="300"
@@ -11516,6 +11512,15 @@
           </div>
           <div class="message-box" id="message-box">
             <p>Hello, my name is Oggy!</p>
+          </div>
+        </section>
+        <!-- Todo-list block: #4 -->
+        <section class="to-do-list-section">
+          <h1>To do list</h1>
+          <div class="to-do-list-container">
+            <ul class="list-container" id="to-do-list"></ul>
+            <input type="text" name="task" id="task" placeholder="Enter Task" />
+            <button type="button" id="add-button">Add</button>
           </div>
         </section>
       </div>

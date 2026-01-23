@@ -29,15 +29,18 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100vh;
-  place-items: center;
+  place-items: start;
   background: url(../images/winter-tree-bg-1920x1080.jpg) no-repeat;
   background-size: cover;
+  /* padding-left: 20px;
+  padding-top: 20px; */
 }
 
 /* -----TO-DO-LIST----- */
 
-.to-do-list-container {
-  margin-left: 15px;
+.to-do-list-section {
+  margin-top: -100px;
+  margin-left: 240px;
 }
 
 .list-container {
@@ -64,11 +67,13 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 5px 10px;
   padding: 10px 14px;
   border-bottom: 1px solid #ddd;
   background: #f9f9f9;
   border-radius: 10px;
-  width: 500px;
+  width: 300px;
+  opacity: 0.6;
   /* position: relative; */
 }
 
@@ -98,6 +103,8 @@ h1 {
 
 /* -----CLOCK----- */
 .clock-container {
+  /* background-color: #fcfcfc;
+  opacity: 0.8; */
   background-color: #000000;
   /* opacity: 0.9; */
   border: 10px solid #9a031e;
@@ -142,14 +149,59 @@ h1 {
   cursor: pointer;
 }
 
+/* -----DATE----- */
+
+.date-container {
+  /* background: white; */
+  width: 200px;
+  /* padding: 10px; */
+  /* padding-right: 50px;
+  padding-top: 5px; */
+  padding: 5px 20px 0 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* gap: 0; */
+  margin: 0;
+}
+
+.month-container {
+  background: red;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  line-height: 1.8;
+}
+
+.day-and-week-container {
+  background: white;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  line-height: 0;
+}
+
+.day {
+  font-size: 2.5em;
+}
+
+/* Date and Clock */
+.date-and-clock-section {
+  display: flex;
+  padding-top: 20px;
+}
+
 /* -----WEATHER----- */
 .weather-app-container {
   background: white;
-  padding: 20px 30px;
+  /* padding: 20px 30px;     */
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   width: 300px;
+  margin-top: 20px;
+  margin-left: 20px;
+  /* justify-self: center;
+  align-self: center; */
+  /* height: 180px; */
 }
 
 .search {
@@ -235,10 +287,17 @@ svg {
 }
 
 .bunny-section {
+  /* background: white; */
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
-  gap: 15px;
+  /* justify-content: flex-start; */
+  /* gap: 10px; */
+  /* padding: 0; */
+  /* margin-top: 200px; */
+  /* margin-left: 400px; */
+  margin: 0 0 60px 300px;
+  align-self: end;
+  justify-self: end;
 }
 
 .message-box {
