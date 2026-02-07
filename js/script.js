@@ -99,6 +99,10 @@ updateClock();
 const clockInterval = setInterval(updateClock, 1000);
 
 // -----DATE-----
+const today = new Date();
+const month = document.querySelector(".month");
+const weekDay = document.querySelector(".week-day");
+const day = document.querySelector(".day");
 
 // Convert Month
 function convertMonth(month) {
@@ -151,11 +155,6 @@ function convertWeekDay(weekDay) {
 }
 
 function updateDate() {
-  const today = new Date();
-  const month = document.querySelector(".month");
-  const weekDay = document.querySelector(".week-day");
-  const day = document.querySelector(".day");
-
   //   const dateInfo = document.querySelector("#date");
 
   //   const options = {
@@ -243,6 +242,97 @@ function showWeather(data) {
   });
 
   bunnyClothes(temperature);
+  setBackgroundPicture();
+  weatherMessage();
+}
+
+function convertMonthToSeason(monthOfYear) {
+  if (
+    monthOfYear == "December" ||
+    monthOfYear == "January" ||
+    monthOfYear == "February"
+  ) {
+    return "winter";
+  } else if (
+    monthOfYear == "March" ||
+    monthOfYear == "April" ||
+    monthOfYear == "May"
+  ) {
+    return "spring";
+  } else if (
+    monthOfYear == "June" ||
+    monthOfYear == "July" ||
+    monthOfYear == "August"
+  ) {
+    return "summer";
+  } else if (
+    monthOfYear == "September" ||
+    monthOfYear == "October" ||
+    monthOfYear == "November"
+  ) {
+    return "fall";
+  }
+}
+
+function setBackgroundPicture() {
+  const contentWrapper = document.querySelector(".content-wrapper");
+  const season = convertMonthToSeason(convertMonth(today.getMonth()));
+
+  //   console.log(convertMonth(month), month, season);
+
+  const fallPictures = [
+    "fall-bg-1.jpg",
+    "fall-bg-2.jpg",
+    "fall-bg-3.jpg",
+    "fall-bg-4.jpg",
+  ];
+  const springPictures = [
+    "spring-bg-1.jpg",
+    "spring-bg-2.jpg",
+    "spring-bg-3.jpg",
+    "spring-bg-4.jpg",
+  ];
+  const summerPictures = [
+    "summer-bg-1.jpg",
+    "summer-bg-2.jpg",
+    "summer-bg-3.jpg",
+    "summer-bg-4.jpg",
+  ];
+  const winterPictures = [
+    "winter-bg-1.jpg",
+    "winter-bg-2.jpg",
+    "winter-bg-3.jpg",
+    "winter-bg-4.jpg",
+  ];
+
+  if (season === "summer" && type === "very-hot-clothes") {
+    contentWrapper.style.backgroundImage = "url('../images/very-hot-bg.jpg')";
+  } else if (season === "winter" && type === "freezing-clothes") {
+    contentWrapper.style.backgroundImage = "url('../images/freezing-bg.jpg')";
+  } else if (season === "winter" && winterPictures.length) {
+    const randomWinterPic =
+      winterPictures[Math.floor(Math.random() * winterPictures.length)];
+
+    contentWrapper.style.backgroundImage = `url('../images/${randomWinterPic}')`;
+  } else if (season === "spring" && springPictures.length) {
+    const randomSpringPic =
+      springPictures[Math.floor(Math.random() * springPictures.length)];
+
+    contentWrapper.style.backgroundImage = `url('../images/${randomSpringPic}')`;
+  } else if (season === "summer" && summerPictures.length) {
+    const randomSummerPic =
+      summerPictures[Math.floor(Math.random() * summerPictures.length)];
+
+    contentWrapper.style.backgroundImage = `url('../images/${randomSummerPic}')`;
+  } else if (season === "fall" && fallPictures.length) {
+    const randomFallPic =
+      fallPictures[Math.floor(Math.random() * fallPictures.length)];
+
+    contentWrapper.style.backgroundImage = `url('../images/${randomFallPic}')`;
+  } else {
+    contentWrapper.style.backgroundImage =
+      "url('../images/winter-tree-bg-1920x1080.jpg')";
+  }
 }
 
 // BUNNY
@@ -290,7 +380,6 @@ function bunnyClothes(temperature) {
 }
 
 function changeClothesColor(type) {
-  console.log(type);
   switch (type) {
     case "very-hot-clothes": {
       const hat = document.querySelector("#very-hot-hat-color");
@@ -724,4 +813,60 @@ function changeClothesColor(type) {
       break;
     }
   }
+}
+
+// Message box
+function convertWeatherTypeToMessage(type) {
+  let message = "";
+  switch (type) {
+    case "very-hot-clothes": {
+      message = "It's extremely hot today. Try to stay cool and dress light.";
+      break;
+    }
+    case "hot-clothes": {
+      message =
+        "It's hot outside, so wear something comfortable and breathable.";
+      break;
+    }
+    case "warm-clothes": {
+      message = "It's a warm day. Light and relaxed clothing should work well.";
+      break;
+    }
+    case "mild-cool-clothes": {
+      message =
+        "The weather is mild and comfortable. Dress in layers if needed.";
+      break;
+    }
+    case "chilly-clothes": {
+      message = "It's a bit chilly today. You may want an extra layer.";
+      break;
+    }
+    case "cold-clothes": {
+      message = "It's cold outside. Make sure to dress warmly.";
+      break;
+    }
+    case "very-cold-clothes": {
+      message = "It's very cold today. Bundle up to stay warm.";
+      break;
+    }
+    case "freezing-clothes": {
+      message =
+        "It's freezing outside. Dress in heavy layers and stay protected.";
+      break;
+    }
+  }
+  return message;
+}
+
+function weatherMessage() {
+  const messageBox = document.querySelector(".message-box");
+  const message = convertWeatherTypeToMessage(type);
+
+  messageBox.textContent = message;
+
+  messageBox.classList.remove("one");
+
+  void messageBox.offsetWidth;
+
+  messageBox.classList.add("one");
 }
