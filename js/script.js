@@ -306,32 +306,32 @@ function setBackgroundPicture() {
   ];
 
   if (season === "summer" && type === "very-hot-clothes") {
-    contentWrapper.style.backgroundImage = "url('../images/very-hot-bg.jpg')";
+    contentWrapper.style.backgroundImage = "url('images/very-hot-bg.jpg')";
   } else if (season === "winter" && type === "freezing-clothes") {
-    contentWrapper.style.backgroundImage = "url('../images/freezing-bg.jpg')";
+    contentWrapper.style.backgroundImage = "url('images/freezing-bg.jpg')";
   } else if (season === "winter" && winterPictures.length) {
     const randomWinterPic =
       winterPictures[Math.floor(Math.random() * winterPictures.length)];
 
-    contentWrapper.style.backgroundImage = `url('../images/${randomWinterPic}')`;
+    contentWrapper.style.backgroundImage = `url('images/${randomWinterPic}')`;
   } else if (season === "spring" && springPictures.length) {
     const randomSpringPic =
       springPictures[Math.floor(Math.random() * springPictures.length)];
 
-    contentWrapper.style.backgroundImage = `url('../images/${randomSpringPic}')`;
+    contentWrapper.style.backgroundImage = `url('images/${randomSpringPic}')`;
   } else if (season === "summer" && summerPictures.length) {
     const randomSummerPic =
       summerPictures[Math.floor(Math.random() * summerPictures.length)];
 
-    contentWrapper.style.backgroundImage = `url('../images/${randomSummerPic}')`;
+    contentWrapper.style.backgroundImage = `url('images/${randomSummerPic}')`;
   } else if (season === "fall" && fallPictures.length) {
     const randomFallPic =
       fallPictures[Math.floor(Math.random() * fallPictures.length)];
 
-    contentWrapper.style.backgroundImage = `url('../images/${randomFallPic}')`;
+    contentWrapper.style.backgroundImage = `url('images/${randomFallPic}')`;
   } else {
     contentWrapper.style.backgroundImage =
-      "url('../images/winter-tree-bg-1920x1080.jpg')";
+      "url('images/winter-tree-bg-1920x1080.jpg')";
   }
 }
 
