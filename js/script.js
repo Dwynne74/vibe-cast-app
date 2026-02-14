@@ -35,7 +35,7 @@ function addTask() {
   }
 }
 
-function reset() {}
+// function reset() {}
 
 // -----CLOCK-----
 const clock = document.querySelector(".clock");
@@ -352,24 +352,24 @@ function celciusToFahrenheit(tempInCelcius) {
 }
 
 function bunnyClothes(temperature) {
-  const tempInCelcius = celciusToFahrenheit(temperature);
+  const tempInFahrenheit = celciusToFahrenheit(temperature);
   if (currentType) {
     currentType.classList.toggle("visible");
   }
 
-  if (tempInCelcius >= 90) {
+  if (tempInFahrenheit >= 90) {
     type = "very-hot-clothes";
-  } else if (tempInCelcius >= 80 && tempInCelcius <= 89) {
+  } else if (tempInFahrenheit >= 80 && tempInFahrenheit <= 89) {
     type = "hot-clothes";
-  } else if (tempInCelcius >= 70 && tempInCelcius <= 79) {
+  } else if (tempInFahrenheit >= 70 && tempInFahrenheit <= 79) {
     type = "warm-clothes";
-  } else if (tempInCelcius >= 60 && tempInCelcius <= 69) {
+  } else if (tempInFahrenheit >= 60 && tempInFahrenheit <= 69) {
     type = "mild-cool-clothes";
-  } else if (tempInCelcius >= 50 && tempInCelcius <= 59) {
+  } else if (tempInFahrenheit >= 50 && tempInFahrenheit <= 59) {
     type = "chilly-clothes";
-  } else if (tempInCelcius >= 40 && tempInCelcius <= 49) {
+  } else if (tempInFahrenheit >= 40 && tempInFahrenheit <= 49) {
     type = "cold-clothes";
-  } else if (tempInCelcius >= 30 && tempInCelcius <= 39) {
+  } else if (tempInFahrenheit >= 30 && tempInFahrenheit <= 39) {
     type = "very-cold-clothes";
   } else {
     type = "freezing-clothes";
