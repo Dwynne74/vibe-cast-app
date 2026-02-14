@@ -35,8 +35,6 @@ function addTask() {
   }
 }
 
-// function reset() {}
-
 // -----CLOCK-----
 const clock = document.querySelector(".clock");
 const stopWatch = document.querySelector(".stop-watch");
@@ -55,7 +53,6 @@ function updateClock() {
 
   let hours = dateNow.getHours();
   let minutes = dateNow.getMinutes();
-  //   let seconds = dateNow.getSeconds();
 
   const amPm = hours >= 12 ? "PM" : "AM";
   hours = hours % 12 || 12;
@@ -278,8 +275,6 @@ function setBackgroundPicture() {
   const contentWrapper = document.querySelector(".content-wrapper");
   const season = convertMonthToSeason(convertMonth(today.getMonth()));
 
-  //   console.log(convertMonth(month), month, season);
-
   const fallPictures = [
     "fall-bg-1.jpg",
     "fall-bg-2.jpg",
@@ -338,7 +333,7 @@ function setBackgroundPicture() {
 // BUNNY
 const svg = document.querySelector("svg");
 const bunny = document.querySelector("#bunny");
-const rightArmWave = document.querySelector("#bunny-right-arm-wave"); // the waving arm element
+const rightArmWave = document.querySelector("#bunny-right-arm-wave");
 const rightArm = document.querySelector("#bunny-right-arm");
 let type;
 let currentType;
@@ -764,8 +759,6 @@ function changeClothesColor(type) {
       const hat = document.querySelector("#freezing-hat-color-1");
       const shirt = document.querySelector("#freezing-shirt-color");
       const pants = document.querySelector("#freezing-pants-color");
-
-      //   console.log(hat, shirt, pants, shoes, gloves);
 
       const hatColors = [
         "#4845e7",
